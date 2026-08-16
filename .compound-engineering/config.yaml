@@ -1,0 +1,17 @@
+# CE gstack -- team defaults
+#
+# Compound Engineering owns Phase 1 configuration. Keep this file small until
+# real feature runs show which defaults remove actual friction.
+
+# Artifact root remains the CE default. Plans and learnings are committed under:
+# - docs/plans/
+# - docs/solutions/
+# docs_root: docs
+
+# Keep Phase 1 plans machine-readable for downstream CE skills.
+plan_output: md
+brainstorm_output: md
+
+# Keep cross-model/runtime features opt-in while the baseline is being dogfooded.
+cross_model_review_mode: off
+work_engine_mode: off

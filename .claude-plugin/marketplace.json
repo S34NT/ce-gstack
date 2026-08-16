@@ -1,0 +1,27 @@
+{
+  "name": "ce-gstack-marketplace",
+  "owner": {
+    "name": "Compound Engineering hybrid experiment"
+  },
+  "metadata": {
+    "description": "Local marketplace metadata for the CE/gstack hybrid baseline",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "ce-gstack",
+      "description": "Lean CE/gstack hybrid baseline for the CE engineering loop.",
+      "author": {
+        "name": "Compound Engineering hybrid experiment"
+      },
+      "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+      "tags": [
+        "compound-engineering",
+        "workflow",
+        "code-review",
+        "knowledge-management"
+      ],
+      "source": "./"
+    }
+  ]
+}

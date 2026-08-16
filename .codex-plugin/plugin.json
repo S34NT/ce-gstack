@@ -1,0 +1,43 @@
+{
+  "name": "ce-gstack",
+  "version": "0.1.0",
+  "description": "Lean CE/gstack hybrid baseline for running the CE engineering loop without gstack runtime preamble state.",
+  "author": {
+    "name": "Compound Engineering hybrid experiment"
+  },
+  "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+  "repository": "https://github.com/EveryInc/compound-engineering-plugin",
+  "license": "MIT",
+  "keywords": [
+    "compound-engineering",
+    "gstack",
+    "workflow-automation",
+    "code-review",
+    "knowledge-management"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "CE gstack",
+    "shortDescription": "Run the CE loop cleanly before deciding which gstack ideas earn their keep.",
+    "longDescription": "CE gstack is a Phase 1 hybrid baseline: Compound Engineering owns planning artifacts, requirements traceability, implementation workflow, review schema, repository knowledge, skill orchestration, and configuration. gstack contributes product judgment through docs only in this phase; its global runtime preamble and state probes are intentionally absent.",
+    "developerName": "Compound Engineering hybrid experiment",
+    "category": "Coding",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/EveryInc/compound-engineering-plugin",
+    "privacyPolicyURL": "https://every.to/legal",
+    "termsOfServiceURL": "https://every.to/legal",
+    "defaultPrompt": [
+      "Brainstorm a feature with ce-brainstorm",
+      "Plan the implementation with ce-plan",
+      "Review current changes with ce-code-review"
+    ],
+    "brandColor": "#C9EFFA",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

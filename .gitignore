@@ -1,0 +1,4 @@
+.compound-engineering/config.local.yaml
+node_modules/
+.DS_Store
+*.log

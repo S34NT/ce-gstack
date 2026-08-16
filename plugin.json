@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ce-gstack",
+  "version": "0.1.0",
+  "description": "A lean Compound Engineering baseline for dogfooding the brainstorm-plan-work-simplify-review-compound loop.",
+  "author": {
+    "name": "Compound Engineering hybrid experiment"
+  },
+  "homepage": "https://github.com/EveryInc/compound-engineering-plugin",
+  "repository": "https://github.com/EveryInc/compound-engineering-plugin",
+  "license": "MIT",
+  "keywords": [
+    "compound-engineering",
+    "requirements-traceability",
+    "code-review",
+    "repo-knowledge",
+    "workflow"
+  ]
+}
