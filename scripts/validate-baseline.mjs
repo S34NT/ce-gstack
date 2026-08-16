@@ -182,6 +182,7 @@ for (const path of [
   "STRATEGY.md",
   "CONCEPTS.md",
   "AGENTS.md",
+  "scripts/dev-install.mjs",
   "docs/plans/.gitkeep",
   "docs/solutions/.gitkeep",
 ]) {
@@ -220,6 +221,7 @@ for (const path of [
   ".claude-plugin/plugin.json",
   ".claude-plugin/marketplace.json",
   ".compound-engineering/config.yaml",
+  "scripts/dev-install.mjs",
   ...expectedSkills.map((skill) => `skills/${skill}/SKILL.md`),
 ]) {
   const text = readText(path);
@@ -270,7 +272,7 @@ for (const skill of expectedSkills) {
   }
 }
 
-for (const path of [...listFiles("skills"), "skills/_shared/context.mjs"]) {
+for (const path of [...listFiles("skills"), "skills/_shared/context.mjs", "scripts/dev-install.mjs"]) {
   if (path.endsWith(".json")) {
     try {
       JSON.parse(readText(path));

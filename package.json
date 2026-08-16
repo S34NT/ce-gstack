@@ -5,6 +5,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "dev:install": "node scripts/dev-install.mjs",
     "test": "node scripts/validate-baseline.mjs",
     "plugin:validate": "node scripts/validate-manifests.mjs",
     "release:validate": "node scripts/validate-baseline.mjs && node scripts/validate-manifests.mjs"

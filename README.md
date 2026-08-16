@@ -27,6 +27,9 @@ mode, proactive-routing state, project-history scan, or `~/.gstack` state root.
 ## Commands
 
 ```bash
+node scripts/dev-install.mjs status
+node scripts/dev-install.mjs local --host=codex
+node scripts/dev-install.mjs local --host=claude
 node scripts/validate-baseline.mjs
 node scripts/validate-manifests.mjs
 npm test
@@ -34,3 +37,20 @@ npm test
 
 The validation scripts are deliberately small. They protect the Phase 1 contract
 without importing CE's full converter and release pipeline.
+
+## Local Skill Development
+
+Use the dev installer to link this checkout's live `skills/` tree into an agent
+profile:
+
+```bash
+npm run dev:install -- status
+npm run dev:install -- local --host=codex
+npm run dev:install -- local --host=claude
+npm run dev:install -- remove --host=all
+```
+
+Codex local mode creates one collection symlink at
+`$CODEX_HOME/skills/ce-gstack-local`. Claude local mode creates symlinks for the
+six Phase 1 skills plus `_shared` under `${CLAUDE_CONFIG_DIR:-~/.claude}/skills`.
+The script refuses to overwrite unrelated files or symlinks.

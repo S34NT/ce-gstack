@@ -46,3 +46,7 @@ guidance:
 npm test
 npm run plugin:validate
 ```
+
+Use `npm run dev:install -- status` to inspect local Codex/Claude skill links.
+`local` and `remove` manage only symlinks that point at this checkout; they must
+not overwrite unrelated user skills.
