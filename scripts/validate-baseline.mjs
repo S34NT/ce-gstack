@@ -189,6 +189,7 @@ for (const path of [
 }
 
 requireDir("skills");
+requireFile("skills/_shared/context.mjs");
 requireDir("docs/plans");
 requireDir("docs/solutions");
 
@@ -202,6 +203,7 @@ for (const skill of expectedSkills) {
 const actualSkills = existsSync(join(root, "skills"))
   ? readdirSync(join(root, "skills"), { withFileTypes: true })
       .filter((entry) => entry.isDirectory())
+      .filter((entry) => existsSync(repoPath(`skills/${entry.name}/SKILL.md`)))
       .map((entry) => entry.name)
       .sort()
   : [];
@@ -258,12 +260,17 @@ if (!gitignore.split(/\r?\n/).includes(".compound-engineering/config.local.yaml"
 }
 
 for (const skill of expectedSkills) {
+  const contextWrapper = readText(`skills/${skill}/scripts/context.mjs`).trim();
+  if (contextWrapper !== "#!/usr/bin/env node\nimport '../../_shared/context.mjs';") {
+    fail(`skills/${skill}/scripts/context.mjs must be a thin wrapper around skills/_shared/context.mjs`);
+  }
+
   for (const markdownPath of listFiles(`skills/${skill}`).filter((path) => path.endsWith(".md"))) {
     extractLocalReferences(skill, markdownPath);
   }
 }
 
-for (const path of listFiles("skills")) {
+for (const path of [...listFiles("skills"), "skills/_shared/context.mjs"]) {
   if (path.endsWith(".json")) {
     try {
       JSON.parse(readText(path));
